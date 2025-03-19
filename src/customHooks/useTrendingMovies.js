@@ -1,10 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrendingMovies } from "../utils/moviesSlice";
 import { useEffect } from "react";
 import { API_OPTIONS , SHUFFLE_ARRAY } from "../utils/constants";
 
 const useTrendingMovies = () => {
     const dispatch = useDispatch();
+    const topRatedMovies = useSelector((store) => store?.movies?.topRatedMovies);
 
     const getMoviesData = async () => {
           
@@ -20,7 +21,9 @@ const useTrendingMovies = () => {
     }
 
     useEffect(() => {
-        getMoviesData();
+        if (!topRatedMovies) {
+            getMoviesData();
+        }
     }, []); // Dependency array includes `user`
 }
 
