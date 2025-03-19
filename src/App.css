@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Add this after the @import statement */
+body {
+    @apply font-playfair;
+    overflow-x: hidden;
+    
+}
+
+.text-stroke {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.26);
+    -webkit-text-fill-color: red;
+}
+
+.text-shadow {
+    text-shadow: 1px 0px 0px black; /* Adjust as needed */
+}
+
+/* Add this to your CSS file */
+.scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent; /* Change colors accordingly */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+    height: 6px; /* Change height */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* Change thumb color */
+    border-radius: 10px; /* Round corners */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent; /* Background for the track */
+}
+
