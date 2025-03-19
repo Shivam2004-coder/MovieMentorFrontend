@@ -3,7 +3,8 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZDA4NDQxZDliZjQ0ODc1MzUyNjA1MDljNTFlYjZkMCIsIm5iZiI6MTc0MjAzODg3NS40ODk5OTk4LCJzdWIiOiI2N2Q1Njc1YjU3NzY2NWFjZTVmMTYzODkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.oSFDGE4BzANlzzicnHG-NgHSHa5ucCRL_QA-ObxZdJo",
+      "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
+      // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZDA4NDQxZDliZjQ0ODc1MzUyNjA1MDljNTFlYjZkMCIsIm5iZiI6MTc0MjAzODg3NS40ODk5OTk4LCJzdWIiOiI2N2Q1Njc1YjU3NzY2NWFjZTVmMTYzODkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.oSFDGE4BzANlzzicnHG-NgHSHa5ucCRL_QA-ObxZdJo",
   },
 };
 
@@ -31,7 +32,8 @@ export const SHUFFLE_ARRAY = (array) => {
     return array;
 };
 
-export const GOOGLE_API_KEY = "AIzaSyBO-V0rExu-3lfJ-1qpVhTl6vzLqK_zhLU";
+export const GOOGLE_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+// export const GOOGLE_API_KEY = "AIzaSyBO-V0rExu-3lfJ-1qpVhTl6vzLqK_zhLU";
 
 
 export const SAMPLE_DATA = {
