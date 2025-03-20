@@ -20,7 +20,7 @@ const VideoTitle = (mainMovie) => {
     if (!videoTitle) return <ShimmerVideoTitle />; // Show shimmer when loading
 
     return (
-        <div className=" absolute pb-[4%] md:pb-0 pt-[57%] md:pt-[20%] pl-4 md:pl-10 bg-opacity-0 w-screen aspect-video bg-gradient-to-r from-gray-800 ">
+        <div className=" absolute pb-[4%] md:pb-0 pt-[50%] md:pt-[20%] pl-4 md:pl-10 bg-opacity-0 w-screen aspect-video bg-gradient-to-r from-gray-800 ">
             {/* Title - Initially placed above buttons and moves up/right on hover */}
             {/* h-64 w-8/12 */}
             <div className="group text-white" >
