@@ -4,22 +4,120 @@ export const API_OPTIONS = {
     accept: "application/json",
     Authorization:
       "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
-      // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZDA4NDQxZDliZjQ0ODc1MzUyNjA1MDljNTFlYjZkMCIsIm5iZiI6MTc0MjAzODg3NS40ODk5OTk4LCJzdWIiOiI2N2Q1Njc1YjU3NzY2NWFjZTVmMTYzODkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.oSFDGE4BzANlzzicnHG-NgHSHa5ucCRL_QA-ObxZdJo",
   },
 };
 
-export const DEFAULT_TRAILER = {
-  id: "67bb6827a23929ac28bee969",
-  iso_639_1: "en",
-  iso_3166_1: "US",
-  key: "2KzBhW3h3P4",
-  name: "OFFICIAL TRAILER | MEANWHILE",
-  official: true,
-  published_at: "2025-02-04T22:23:21.000Z",
-  site: "YouTube",
-  size: 1080,
-  type: "Trailer",
-};
+
+export const DEFAULT_TRAILER = [
+  {
+    "title" : {
+      "adult": false,
+      "backdrop_path": "/j29ekbcLpBvxnGk6LjdTc2EI5SA.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        12,
+        18,
+        35
+      ],
+      "id": 150540,
+      "original_language": "en",
+      "original_title": "Inside Out",
+      "overview": "When 11-year-old Riley moves to a new city, her Emotions team up to help her through the transition. Joy, Fear, Anger, Disgust and Sadness work together, but when Joy and Sadness get lost, they must journey through unfamiliar places to get back home.",
+      "popularity": 3.915,
+      "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+      "release_date": "2015-06-17",
+      "title": "Inside Out",
+      "video": false,
+      "vote_average": 7.91,
+      "vote_count": 22343
+    } ,
+    "video" : {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Inside Out - Official US Trailer 2",
+      "key": "1HFv47QHWJU",
+      "published_at": "2015-03-10T19:00:06.000Z",
+      "site": "YouTube",
+      "size": 1080,
+      "type": "Trailer",
+      "official": true,
+      "id": "571f2fffc3a3683393002ca1"
+    },
+  },
+  {
+    "title" : {
+      "adult": false,
+      "backdrop_path": "/q62bpQ67qaXY0u6b2wFEnQYIbPd.jpg",
+      "genre_ids": [
+        10751,
+        12,
+        16,
+        35,
+        14
+      ],
+      "id": 301528,
+      "original_language": "en",
+      "original_title": "Toy Story 4",
+      "overview": "Woody has always been confident about his place in the world and that his priority is taking care of his kid, whether that's Andy or Bonnie. But when Bonnie adds a reluctant new toy called \"Forky\" to her room, a road trip adventure alongside old and new friends will show Woody how big the world can be for a toy.",
+      "popularity": 3.583,
+      "poster_path": "/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg",
+      "release_date": "2019-06-19",
+      "title": "Toy Story 4",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 9928
+    },
+    "video" : {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Official Trailer 2",
+      "key": "Pl9JS8-gnWQ",
+      "site": "YouTube",
+      "size": 1080,
+      "type": "Trailer",
+      "official": true,
+      "published_at": "2019-05-21T13:00:03.000Z",
+      "id": "5d0b262c92514171b0b85c16"
+    },
+  },
+  {
+    "title" : {
+      "adult": false,
+      "backdrop_path": "/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        16,
+        28,
+        35
+      ],
+      "id": 177572,
+      "original_language": "en",
+      "original_title": "Big Hero 6",
+      "overview": "A special bond develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+      "popularity": 6.667,
+      "poster_path": "/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
+      "release_date": "2014-10-24",
+      "title": "Big Hero 6",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 15804
+    },
+    "video" : {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Disney's Big Hero 6 - Official US Trailer 2",
+      "key": "8IdMPpKMdcc",
+      "published_at": "2014-09-25T16:00:00.000Z",
+      "site": "YouTube",
+      "size": 1080,
+      "type": "Trailer",
+      "official": true,
+      "id": "571eb280925141052c0001f8"
+    },
+  }
+]
 
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";

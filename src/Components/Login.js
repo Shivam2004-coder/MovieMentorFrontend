@@ -31,7 +31,7 @@ const Login = () => {
         
         setTimeout(() => setLoading(false), 1000); // Adjust the delay as needed
         dispatch(addTrailerVideos(DEFAULT_TRAILER))
-    },[]);
+    },[dispatch]);
 
     const handleSubmitButton = () => {
         //  Validate our sign in sign up form
@@ -79,7 +79,7 @@ const Login = () => {
                 signInWithEmailAndPassword(auth, email.current.value , password.current.value )
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
+                    // const user = userCredential.user;
                     // ...
                 })
                 .catch((error) => {

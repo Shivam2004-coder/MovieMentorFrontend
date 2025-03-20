@@ -4,7 +4,7 @@ import ShimmerVideoTitle from "../ShimmerUI/ShimmerVideoTitle";
 
 const VideoTitle = (mainMovie) => {
     const {videoTitle , overview , movieId} = mainMovie;
-    const { translations } = useSelector((store) => store.language); // Get translations from Redux
+    const { translations } = useSelector((store) => store?.language); // Get translations from Redux
 
     const { handleMoreInfoClick } = useMovieNavigation();
 

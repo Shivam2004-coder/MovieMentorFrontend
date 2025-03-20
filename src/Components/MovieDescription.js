@@ -8,9 +8,9 @@ const MovieDescription = ({ movie, trailerLink }) => {
     const [showModal, setShowModal] = useState(false);
     const [newPlaylistName, setNewPlaylistName] = useState("");
     const [error, setError] = useState(""); // Error state for input validation
-    const playlists = useSelector((store) => store.library.playlists);
+    const playlists = useSelector((store) => store?.library?.playlists);
     const [selectedPlaylists, setSelectedPlaylists] = useState(new Set());
-    const { translations } = useSelector((store) => store.language); // Get translations from Redux
+    const { translations } = useSelector((store) => store?.language); // Get translations from Redux
 
      // Show shimmer if movie data is not available
      if (!movie) return <ShimmerMovieDescription />;
@@ -19,7 +19,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
     const initializeSelectedPlaylists = () => {
         const selected = new Set();
         for (const [name, movies] of Object.entries(playlists)) {
-            if (movies.some((m) => m.id === movie.id)) {
+            if (movies.some((m) => m?.id === movie?.id)) {
                 selected.add(name);
             }
         }
@@ -65,7 +65,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
     // Add the movie to all selected playlists (without duplicates)
     const handleDone = () => {
         selectedPlaylists.forEach((playlistName) => {
-            if (!playlists[playlistName].some((m) => m.id === movie.id)) {
+            if (!playlists[playlistName].some((m) => m?.id === movie?.id)) {
                 dispatch(addMovieToPlaylist({ playlistName, movie }));
             }
         });

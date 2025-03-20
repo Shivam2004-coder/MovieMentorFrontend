@@ -13,8 +13,8 @@ const MovieInfo = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
 
-    const movieDetails = useSelector((store) => store.movies.movieDescription[id]);
-    const movieTrailer = useSelector((store) => store.movies.movieTrailer[id]);
+    const movieDetails = useSelector((store) => store?.movies?.movieDescription[id]);
+    const movieTrailer = useSelector((store) => store?.movies?.movieTrailer[id]);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {

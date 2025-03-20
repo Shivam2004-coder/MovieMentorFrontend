@@ -6,7 +6,6 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { changeLanguage } from "../utils/languageSlice"; // Import translation action
-import ShimmerHeader from "../ShimmerUI/ShimmerHeader";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState();
@@ -68,7 +67,9 @@ const Header = () => {
         }
       } else {
         dispatch(removeUser());
-        navigate("/");
+        // if ( location.pathname !== "/" ) {
+          navigate("/");
+        // }
       }
     });
 

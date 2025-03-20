@@ -1,13 +1,10 @@
 import { useSelector } from "react-redux";
-import useMovieTrailer from "../customHooks/useMovieTrailer";
 import ShimmerVideoBackGround from "../ShimmerUI/ShimmerVideoBackGround";
 
 
-const VideoBackGround = ({movieId}) => {
+const VideoBackGround = (props) => {
 
-    const trailerVideo = useSelector((store) => store.movies.trailerVideo);
-
-    useMovieTrailer({movieId});
+    const trailerVideo = useSelector((store) => store?.movies?.trailerVideoTrailer);
 
     if (!trailerVideo) return <ShimmerVideoBackGround />; // Show shimmer when loading
 
@@ -15,7 +12,6 @@ const VideoBackGround = ({movieId}) => {
         <div className="bg-black" >
             <iframe 
                 className=" w-screen aspect-square md:aspect-video"
-                // src={"https://www.youtube.com/embed/"+trailerVideo?.key+"?&autoplay=1&mute=1"} 
                 src={"https://www.youtube.com/embed/"+trailerVideo?.key+"?&autoplay=1&mute=1&loop=1&playlist="+trailerVideo?.key} 
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

@@ -8,7 +8,8 @@ const movieSlice = createSlice({
         topRatedMovies: null,
         trendingMovies: null,
         trendingTVShows: null,
-        trailerVideo: null,
+        trailerVideoContent: null,
+        trailerVideoTrailer : null,
         movieDescription: {},  // Store movie details with ID as the key
         movieTrailer: {}  // Store movie details with ID as the key
     },
@@ -29,7 +30,9 @@ const movieSlice = createSlice({
             state.trendingTVShows = action.payload;
         },
         addTrailerVideos: (state, action) => {
-            state.trailerVideo = action.payload;
+            const { content , trailer } = action.payload;
+            state.trailerVideoContent = content;
+            state.trailerVideoTrailer = trailer;
         },
         addMovieDescription: (state, action) => {
             const { id, details } = action.payload;

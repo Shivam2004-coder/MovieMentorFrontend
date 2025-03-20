@@ -2,7 +2,6 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
-import { useEffect, useState } from "react";
 import ShimmerAbout from "../ShimmerUI/ShimmerAbout";
 
 const About = () => {

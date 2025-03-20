@@ -3,7 +3,7 @@ import useMovieSearch from "../customHooks/useMovieSearch";
 
 const SearchBar = () => {
     const { text, handleSearchClick } = useMovieSearch(); // Destructure the values from the custom hook
-    const { translations } = useSelector((store) => store.language); // Get translations from Redux
+    const { translations } = useSelector((store) => store?.language); // Get translations from Redux
 
     return (
         <div className="pt-[70%] md:pt-[10%] flex justify-center">

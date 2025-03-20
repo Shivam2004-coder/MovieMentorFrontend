@@ -18,7 +18,7 @@ const useMovieSearch = () => {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const result = await model.generateContent(GeminiQuery);
-        const movieNames = result.response.candidates[0].content.parts[0].text.split(",").map(movie => movie.trim());
+        const movieNames = result?.response?.candidates[0]?.content?.parts[0]?.text?.split(",")?.map(movie => movie.trim());
 
         const promises = movieNames.map(movie => {
             const url = "https://api.themoviedb.org/3/search/movie?query=" + movie + "&include_adult=false&language=en-US&page=1";
