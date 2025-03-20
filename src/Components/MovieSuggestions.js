@@ -10,7 +10,7 @@ const MovieSuggestions = () => {
     // }
 
     return (
-        <div className="h-screen">
+        <div className="">
             {movies && movies.length > 0 && 
                 movies.map((movie, index) => (
                     <MovieList key={index} title={movieNames[index]} movies={movie} />

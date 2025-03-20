@@ -40,7 +40,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - usePopularMovies Custom Hook
     - GPT search Page
     - GPT search Bar
-    - Integrate the GPT api's
+    - Integrate the Gemini api's
+    - Multi - language Feature in our App
+    - Fetched MovieSuggestions from TMDB
+    - created gptSlice added data
+    - Resused movie list component to make movie suggestion container
+    - Memoization
+    - Made a library feature by creating another slice .
+    - Added .env file
+    - Made our site Responsive
 
 # Features of my project :
 

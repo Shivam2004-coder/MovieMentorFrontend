@@ -20,14 +20,16 @@ const VideoTitle = (mainMovie) => {
     if (!videoTitle) return <ShimmerVideoTitle />; // Show shimmer when loading
 
     return (
-        <div className=" absolute pt-[20%] pl-10 bg-opacity-0 w-screen aspect-video bg-gradient-to-r from-gray-800 ">
+        <div className=" absolute pb-[4%] md:pb-0 pt-[57%] md:pt-[20%] pl-4 md:pl-10 bg-opacity-0 w-screen aspect-video bg-gradient-to-r from-gray-800 ">
             {/* Title - Initially placed above buttons and moves up/right on hover */}
             {/* h-64 w-8/12 */}
             <div className="group text-white" >
                 <h1 className="
                     mb-10
                     cursor-pointer
-                    font-bold text-5xl 
+                    font-bold 
+                    text-3xl
+                    md:text-5xl 
                     transform translate-y-10
                     transition-all duration-500 ease-in-out
                     group-hover:translate-y-0 group-hover:translate-x-4 group-hover:opacity-100 group-hover:text-6xl
@@ -37,6 +39,8 @@ const VideoTitle = (mainMovie) => {
 
                 {/* Overview - Initially hidden and appears on hover */}
                 <p className="
+                    hidden
+                    md:inline-block
                     cursor-pointer
                     text-sm ml-5 w-1/4 opacity-0 transition-opacity duration-500 ease-in-out
                     group-hover:opacity-100
@@ -47,14 +51,20 @@ const VideoTitle = (mainMovie) => {
             <div className="flex items-center mt-1" >
                 <button className="
                                     text-white
-                                    text-lg 
+                                    text-sm
+                                    md:text-lg 
                                     bg-gray-900 
                                     bg-opacity-60 
-                                    p-4
-                                    h-16
-                                    w-56
+                                    p-2
+                                    md:p-4
+                                    h-14
+                                    w-30
+                                    md:h-16
+                                    md:w-56
                                     rounded-sm 
-                                    m-2
+                                    ml-0
+                                    m-1
+                                    md:m-2
                                     transition-all duration-300 ease-in-out 
                                     hover:bg-gray-500 hover:bg-opacity-70 
                                     active:bg-gray-900 active:bg-opacity-60"
@@ -64,8 +74,10 @@ const VideoTitle = (mainMovie) => {
                                     text-black
                                     fa-solid 
                                     fa-info 
-                                    h-7 
-                                    w-7 
+                                    h-6
+                                    w-6
+                                    md:h-7 
+                                    md:w-7 
                                     rounded-full 
                                     text-center 
                                     p-1 

@@ -75,23 +75,23 @@ const MovieDescription = ({ movie, trailerLink }) => {
     return (
         <div className="bg-gray-950 text-white p-6 rounded-lg shadow-inner shadow-gray-600">
             {/* Title */}
-            <h2 className="text-3xl font-bold mb-2">{movie?.title || translations.TitleNotAvailable}</h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-2">{movie?.title || translations.TitleNotAvailable}</h2>
 
             {/* Tagline */}
-            <p className="text-gray-400 italic mb-2">{movie?.tagline || translations.Notaglineavailable}</p>
+            <p className="text-sm md:text-lg text-gray-400 italic mb-2">{movie?.tagline || translations.Notaglineavailable}</p>
 
             {/* Overview */}
             <p className="text-sm text-gray-300 mb-4">{movie?.overview || translations.Nodescriptionavailableforthismovie}</p>
 
             {/* Movie Stats */}
             <div className="flex gap-4 mb-4">
-                <span className="bg-gray-600 text-white px-3 py-1 rounded-sm shadow-inner shadow-gray-800">
+                <span className="bg-gray-600 text-white px-3 py-1 text-sm md:text-lg rounded-sm shadow-inner shadow-gray-800">
                     {movie?.vote_average ? `${movie.vote_average}⭐` : translations.NoRating}
                 </span>
-                <span className="bg-gray-600 text-white px-3 py-1 rounded-sm shadow-inner shadow-gray-800">
+                <span className="bg-gray-600 text-white px-3 py-1 text-sm md:text-lg rounded-sm shadow-inner shadow-gray-800">
                     {movie?.runtime ? `${movie.runtime} min` : translations.RuntimeUnknown}
                 </span>
-                <span className="bg-gray-600 text-white px-3 py-1 rounded-sm shadow-inner shadow-gray-800">
+                <span className="bg-gray-600 text-white px-3 py-1 text-sm md:text-lg rounded-sm shadow-inner shadow-gray-800">
                     {movie?.release_date || translations.ReleaseDateUnavailable}
                 </span>
             </div>
@@ -101,13 +101,13 @@ const MovieDescription = ({ movie, trailerLink }) => {
                 href={trailerLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-600 hover:bg-red-700 mt-3 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-inner shadow-gray-800 block text-center w-max"
+                className="bg-red-600 hover:bg-red-700 mt-3 text-white md:font-semibold p-2 md:py-2 md:px-4 rounded-sm md:rounded-lg transition duration-300 ease-in-out shadow-inner shadow-gray-800 block text-center w-max"
             >
                 🎬 {translations.WatchonYouTube}
             </a>
 
             {/* Add to Library Button */}
-            <button onClick={handleAddToLibrary} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out">
+            <button onClick={handleAddToLibrary} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white md:font-semibold p-2 md:py-2 md:px-4 rounded-sm md:rounded-lg transition duration-300 ease-in-out">
                 {translations.AddtoLibrary}
             </button>
 
@@ -115,7 +115,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
             {showModal && (
                 <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-90">
                     <div className="bg-gray-800 p-4 rounded-lg shadow-inner shadow-gray-950">
-                        <h3 className="text-xl font-bold mb-4">{translations.AddtoLibrary}</h3>
+                        <h3 className="text-lg md:text-xl font-bold mb-4">{translations.AddtoLibrary}</h3>
 
                         {/* Existing playlists */}
                         {Object.keys(playlists).map((playlistName) => (
@@ -131,8 +131,8 @@ const MovieDescription = ({ movie, trailerLink }) => {
                         ))}
 
                         {/* Input for new playlist */}
-                        <div className="bg-black w-56 p-2 rounded-lg mt-5" >
-                          <div className="flex flex-col mb-4">
+                        <div className="bg-black w-56 p-2 rounded-sm md:rounded-lg mt-5" >
+                          <div className="flex flex-col mb-2 md:mb-4">
                               <input
                                   type="text"
                                   placeholder={translations.NewPlaylistName}
@@ -148,7 +148,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
 
                           {/* Buttons */}
                           <button
-                              className="bg-white text-black font-bold py-2 px-4 rounded-sm mr-2 hover:bg-gray-500 active:bg-white"
+                              className="bg-white text-black font-bold p-2 md:py-2 md:px-4 rounded-sm mr-2 hover:bg-gray-500 active:bg-white"
                               onClick={handleCreatePlaylist}
                           >
                               {translations.CreatePlaylist}

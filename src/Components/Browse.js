@@ -27,7 +27,7 @@ const Browse = () => {
     // if (loading) return <ShimmerBrowse />; // Show shimmer while loading
 
     return (
-        <div>
+        <div className="bg-black" >
             <Header />
             <MainContainer />
             <SecondaryContainer />

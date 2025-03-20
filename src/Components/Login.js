@@ -106,9 +106,9 @@ const Login = () => {
                     className="w-full h-full object-cover"
                 />
             </div>
-            <form onSubmit={(e) => e.preventDefault() } className="rounded-sm flex flex-col absolute bg-gray-900 w-4/12 my-16 mx-auto right-0 left-0 items-start justify-center p-8 bg-opacity-85">
-                {isSignInForm && <h1 className="font-bold text-xl mb-4 text-white">Sign In</h1>}
-                {!isSignInForm && <h1 className="font-bold text-xl mb-4 text-white">Sign Up</h1>}
+            <form onSubmit={(e) => e.preventDefault() } className="rounded-sm flex flex-col absolute bg-gray-900 w-10/12 md:w-4/12 my-56 md:my-16 mx-auto right-0 left-0 items-start justify-center p-8 bg-opacity-85">
+                {isSignInForm && <h1 className="font-bold text-xl mb-4 text-white">{translations.SignIn}</h1>}
+                {!isSignInForm && <h1 className="font-bold text-xl mb-4 text-white">{translations.SignUp}</h1>}
                 {!isSignInForm && <input
                     ref={userName} 
                     type="text"

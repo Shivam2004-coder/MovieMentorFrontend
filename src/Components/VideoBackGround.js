@@ -12,9 +12,9 @@ const VideoBackGround = ({movieId}) => {
     if (!trailerVideo) return <ShimmerVideoBackGround />; // Show shimmer when loading
 
     return (
-        <div  >
+        <div className="bg-black" >
             <iframe 
-                className="w-screen aspect-video"
+                className=" w-screen aspect-square md:aspect-video"
                 // src={"https://www.youtube.com/embed/"+trailerVideo?.key+"?&autoplay=1&mute=1"} 
                 src={"https://www.youtube.com/embed/"+trailerVideo?.key+"?&autoplay=1&mute=1&loop=1&playlist="+trailerVideo?.key} 
                 title="YouTube video player"

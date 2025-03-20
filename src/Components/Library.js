@@ -18,12 +18,12 @@ const Library = () => {
       <img 
           alt="library-images" 
           src="/libraryImage1.jpg" 
-          className="fixed -z-20 h-full w-full"
+          className="fixed -z-20 md:h-full md:w-full h-full object-cover"
       />
       <Header />
-      <div className=" text-white pt-[9%] h-full bg-opacity-20">
+      <div className=" text-white pt-[50%] md:pt-[9%] h-full bg-opacity-20">
         <div className="p-2 bg-gray-900 bg-opacity-90 shadow-inner shadow-gray-500">
-          <h1 className="text-7xl font-bold mb-9 text-center">{translations.MyLibrary}</h1>
+          <h1 className="text-4xl md:text-7xl font-bold mb-9 text-center">{translations.MyLibrary}</h1>
         </div>
         {Object.keys(playlists).length > 0 ? (
           Object.keys(playlists).map((playlistName) => (
@@ -41,7 +41,9 @@ const Library = () => {
             </div>
           ))
         ) : (
-          <p className="text-gray-400">{translations.Noplaylistsavailable}</p>
+          <div className="bg-slate-100 m-3" >
+            <p className="text-black text-center">{translations.Noplaylistsavailable}</p>
+          </div>
         )}
       </div>
       <div>
