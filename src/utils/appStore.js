@@ -11,6 +11,6 @@ export const appStore = configureStore({
         movies : moviesReducer,
         gemini : geminiReducer,
         library: libraryReducer, // Add the library reducer
-        language : languageReducer
+        language : languageReducer,
     },
 });

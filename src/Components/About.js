@@ -28,11 +28,13 @@ const About = () => {
         }
     };
 
+    // console.log(user);
+
     return (
         <div className="border text-white border-black bg-gray-800 bg-opacity-90 w-44 p-3 rounded-md shadow-lg">
             <div className="flex items-center hover:bg-slate-200 hover:rounded-md hover:bg-opacity-40">
                 <img alt="userProfileIcon" src="/user-profile-icon.png" className="h-6 w-6 rounded-full m-2" />
-                <p>{user.displayName}</p>
+                <p>{user.userContent.displayName}</p>
             </div>
             <div className="flex items-center hover:bg-slate-200 hover:rounded-md hover:bg-opacity-40">
                 <p className="bg-slate-600 h-6 w-6 rounded-full m-2 text-center">?</p>

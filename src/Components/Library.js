@@ -3,6 +3,7 @@ import MovieList from "./MovieList";
 import Header from "./Header";
 import { deletePlaylist } from "../utils/librarySlice"; // Import delete action
 import Footer from "./Footer";
+import { successMessage } from "../Components/ShowMessage";
 
 const Library = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const Library = () => {
   const { translations } = useSelector((store) => store.language); // Get translations from Redux
 
   const handleDeletePlaylist = (playlistName) => {
+    successMessage(`${playlistName}-watchlist , is successfully deleted.`)
     dispatch(deletePlaylist(playlistName)); // Dispatch action to delete playlist
   };
 

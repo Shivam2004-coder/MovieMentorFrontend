@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMovieToPlaylist, removeMovieFromPlaylist, createPlaylist } from "../utils/librarySlice"; // Import remove action
 import ShimmerMovieDescription from "../ShimmerUI/ShimmerDescription";
+import { successMessage , invalidMessage } from "../Components/ShowMessage";
 
 const MovieDescription = ({ movie, trailerLink }) => {
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
     const [newPlaylistName, setNewPlaylistName] = useState("");
-    const [error, setError] = useState(""); // Error state for input validation
     const playlists = useSelector((store) => store?.library?.playlists);
     const [selectedPlaylists, setSelectedPlaylists] = useState(new Set());
     const { translations } = useSelector((store) => store?.language); // Get translations from Redux
@@ -31,12 +31,10 @@ const MovieDescription = ({ movie, trailerLink }) => {
         if (showModal) return; // Prevent multiple modal openings
         setSelectedPlaylists(initializeSelectedPlaylists());
         setShowModal(true);
-        setError(""); // Reset error when opening modal
     };
 
     const handleCloseModal = () => {
         setShowModal(false);
-        setError(""); // Reset error when closing modal
     };
 
     // Handle checkbox toggle (add or remove movie from playlist)
@@ -54,12 +52,12 @@ const MovieDescription = ({ movie, trailerLink }) => {
     // Create a new playlist
     const handleCreatePlaylist = () => {
         if (!newPlaylistName.trim()) {
-            setError("Playlist name cannot be empty.");
+            invalidMessage(translations.Watchlistnamecannotbeempty);
             return;
         }
         dispatch(createPlaylist({ name: newPlaylistName }));
         setNewPlaylistName(""); // Reset input
-        setError(""); // Clear error after creation
+        successMessage("Successfully created a new Watchlist.");
     };
 
     // Add the movie to all selected playlists (without duplicates)
@@ -70,6 +68,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
             }
         });
         handleCloseModal();
+        successMessage("Movie is successfully added to your watchlist.");
     };
 
     return (
@@ -138,12 +137,10 @@ const MovieDescription = ({ movie, trailerLink }) => {
                                   placeholder={translations.NewPlaylistName}
                                   value={newPlaylistName}
                                   onChange={(e) => {
-                                      setNewPlaylistName(e.target.value);
-                                      setError(""); // Clear error on input change
+                                      setNewPlaylistName(e.target.value)
                                   }}
                                   className="bg-gray-700 text-white px-2 py-1 rounded-sm w-full"
                               />
-                              {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
                           </div>
 
                           {/* Buttons */}

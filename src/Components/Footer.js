@@ -6,9 +6,11 @@ const Footer = () => {
 
     return (
       <footer className="bg-gray-900 text-gray-300 py-3 bottom-0">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center flex flex-col items-center">
           {/* Logo or Website Name */}
-          <h2 className="text-3xl font-bold text-white mb-4">🎬 {translations.CINEMOOD}</h2>
+          <h2 className="text-3xl flex font-bold text-white mb-4">
+            <img alt="websiteLogo" src="/website-logo.jpg" className="w-10 h-10 rounded-md mr-2" /> <span>MovieMentor</span>
+          </h2>
           
           {/* Navigation Links */}
   
@@ -29,7 +31,7 @@ const Footer = () => {
           </div>
   
           {/* Copyright */}
-          <p className="text-sm">&copy; {new Date().getFullYear()} {translations.CINEMOOD}. {translations.AllRightsReserved}.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} MovieMentor. {translations.AllRightsReserved}.</p>
         </div>
       </footer>
     );

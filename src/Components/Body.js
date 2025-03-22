@@ -30,9 +30,12 @@ const Body = () => {
             element: <Library /> // New route for Library
         }
     ]);
+
     return (
         <div>
             <RouterProvider router={appRouter} />
+            <div className=" absolute z-50" >
+            </div>
         </div>
     )
 };

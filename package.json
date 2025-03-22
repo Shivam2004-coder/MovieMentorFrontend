@@ -4,16 +4,22 @@
   "private": true,
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
+    "@lottiefiles/dotlottie-react": "^0.13.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.3",
     "firebase": "^11.4.0",
+    "framer-motion": "^12.5.0",
     "openai": "^4.87.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-google-button": "^0.8.0",
     "react-redux": "^9.2.0",
     "react-scripts": "5.0.1",
+    "sonner": "^2.0.1",
+    "sooner": "^1.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
