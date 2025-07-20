@@ -5,7 +5,7 @@ const Footer = () => {
 
 
     return (
-      <footer className="bg-gray-900 text-gray-300 py-3 bottom-0">
+      <footer className= "bg-gray-900 text-gray-300 py-3 bottom-0">
         <div className="container mx-auto px-6 text-center flex flex-col items-center">
           {/* Logo or Website Name */}
           <h2 className="text-3xl flex font-bold text-white mb-4">

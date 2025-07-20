@@ -2,69 +2,151 @@ import { useParams } from "react-router-dom";
 import Header from "./Header";
 import MovieTrailer from "./MovieTrailer";
 import MovieDescription from "./MovieDescription";
-import { API_OPTIONS } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addMovieDescription, addMovieTrailer } from "../utils/moviesSlice";
+import { addMovieDescription } from "../utils/moviesSlice";
 import { useEffect } from "react";
-import Footer from "./Footer";
-
+// import Footer from "./Footer"; // optional
 
 const MovieInfo = () => {
-    const dispatch = useDispatch();
-    const { id } = useParams();
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
-    const movieDetails = useSelector((store) => store?.movies?.movieDescription[id]);
-    const movieTrailer = useSelector((store) => store?.movies?.movieTrailer[id]);
+  // get from redux store
+  const movieDetails = useSelector((store) => store?.movies?.movieDescription[id]);
 
-    useEffect(() => {
-        const fetchMovieDetails = async () => {
-            if (!movieDetails) {
-                try {
-                    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, API_OPTIONS);
-                    const data = await res.json();
-                    dispatch(addMovieDescription({ id, details: data }));
-                } catch (err) {
-                    console.error(err);
-                }
-            }
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      if (!movieDetails) {
+        try {
+          console.log("🎬 Fetching movie details from backend:", id);
+          const res = await fetch(`${process.env.REACT_APP_BASE_URL}api/movies/${id}`);
+          const data = await res.json();
+          console.log("📽️ Movie details fetched:", data);
+          dispatch(addMovieDescription({ id, details: data }));
+        } catch (err) {
+          console.error("❌ Error fetching movie details:", err);
+        }
+      }
+    };
 
-            if (!movieTrailer) {
-                try {
-                    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, API_OPTIONS);
-                    const data = await res.json();
-                    dispatch(addMovieTrailer({ id, trailer: data }));
-                } catch (err) {
-                    console.error(err);
-                }
-            }
-        };
+    fetchMovieDetails();
+  }, [id, dispatch, movieDetails]);
 
-        fetchMovieDetails();
-    }, [id, dispatch, movieDetails, movieTrailer]); // No warning now
+  // ✅ trailer & poster come directly from backend
+  const trailerLink = movieDetails?.trailer || null;
+  const posterPath = movieDetails?.poster || null;
 
-    const trailerKey = movieTrailer?.results?.length > 0 ? movieTrailer.results[0].key : null;
-    const url = "https://www.youtube.com/embed/"+trailerKey+"?autoplay=1&mute=1&loop=1&playlist="+trailerKey+"&enablejsapi=1&playsinline=1";
-    const poster_path = movieDetails?.poster_path ? `https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}` : null;
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Header />
 
-    return (
-        <div className="min-h-screen">
-            <Header />
+      {/* Trailer at the top */}
+      <div className="relative w-full h-full ">
+        <MovieTrailer trailerLink={trailerLink} posterPath={posterPath} />
+      </div>
 
-            {/* Movie Trailer at the Top */}
-            <div className="relative w-full h-full -z-10">
-                <MovieTrailer trailerLink={url} posterPath={poster_path} />
-            </div>
+      {/* Description below */}
+      <div className="relative -mt-52">
+        <MovieDescription trailerLink={trailerLink} movie={movieDetails} />
+      </div>
 
-            {/* Movie Description strictly below */}
-            <div className="-mt-52">
-                <MovieDescription trailerLink={url} movie={movieDetails} />
-            </div>
-            <Footer />
-        </div>
-    );
+      {/* <Footer /> */}
+    </div>
+  );
 };
 
 export default MovieInfo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useParams } from "react-router-dom";
+// import Header from "./Header";
+// import MovieTrailer from "./MovieTrailer";
+// import MovieDescription from "./MovieDescription";
+// import { API_OPTIONS } from "../utils/constants";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addMovieDescription, addMovieTrailer } from "../utils/moviesSlice";
+// import { useEffect } from "react";
+// import Footer from "./Footer";
+
+
+// const MovieInfo = () => {
+//     const dispatch = useDispatch();
+//     const { id } = useParams();
+
+//     const movieDetails = useSelector((store) => store?.movies?.movieDescription[id]);
+//     const movieTrailer = useSelector((store) => store?.movies?.movieTrailer[id]);
+
+//     useEffect(() => {
+//         const fetchMovieDetails = async () => {
+//             if (!movieDetails) {
+//                 try {
+//                     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, API_OPTIONS);
+//                     const data = await res.json();
+//                     dispatch(addMovieDescription({ id, details: data }));
+//                 } catch (err) {
+//                     console.error(err);
+//                 }
+//             }
+
+//             if (!movieTrailer) {
+//                 try {
+//                     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, API_OPTIONS);
+//                     const data = await res.json();
+//                     dispatch(addMovieTrailer({ id, trailer: data }));
+//                 } catch (err) {
+//                     console.error(err);
+//                 }
+//             }
+//         };
+
+//         fetchMovieDetails();
+//     }, [id, dispatch, movieDetails, movieTrailer]); // No warning now
+
+//     const trailerKey = movieTrailer?.results?.length > 0 ? movieTrailer.results[0].key : null;
+//     const url = "https://www.youtube.com/embed/"+trailerKey+"?autoplay=1&mute=1&loop=1&playlist="+trailerKey+"&enablejsapi=1&playsinline=1";
+//     const poster_path = movieDetails?.poster_path ? `https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}` : null;
+
+//     return (
+//         <div className="min-h-screen">
+//             <Header />
+
+//             {/* Movie Trailer at the Top */}
+//             <div className="relative w-full h-full -z-10">
+//                 <MovieTrailer trailerLink={url} posterPath={poster_path} />
+//             </div>
+
+//             {/* Movie Description strictly below */}
+//             <div className="-mt-52">
+//                 <MovieDescription trailerLink={url} movie={movieDetails} />
+//             </div>
+//             {/* <Footer /> */}
+//         </div>
+//     );
+// };
+
+// export default MovieInfo;
 
 
 

@@ -1,9 +1,15 @@
 export const API_OPTIONS = {
+  // method: "GET",
+  // headers: {
+  //   accept: "application/json",
+  //   Authorization:
+  //     "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
+  // },
   method: "GET",
   headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
+    "Content-Type": "application/json",
+    "trakt-api-version": "2",
+    "trakt-api-key": process.env.REACT_APP_TRAKT_CLIENT_ID,
   },
 };
 
@@ -20,7 +26,7 @@ export const DEFAULT_TRAILER = [
         18,
         35
       ],
-      "id": 150540,
+      "id": "tt2096673",
       "original_language": "en",
       "original_title": "Inside Out",
       "overview": "When 11-year-old Riley moves to a new city, her Emotions team up to help her through the transition. Joy, Fear, Anger, Disgust and Sadness work together, but when Joy and Sadness get lost, they must journey through unfamiliar places to get back home.",
@@ -56,7 +62,7 @@ export const DEFAULT_TRAILER = [
         35,
         14
       ],
-      "id": 301528,
+      "id": "tt1979376",
       "original_language": "en",
       "original_title": "Toy Story 4",
       "overview": "Woody has always been confident about his place in the world and that his priority is taking care of his kid, whether that's Andy or Bonnie. But when Bonnie adds a reluctant new toy called \"Forky\" to her room, a road trip adventure alongside old and new friends will show Woody how big the world can be for a toy.",
@@ -92,7 +98,7 @@ export const DEFAULT_TRAILER = [
         28,
         35
       ],
-      "id": 177572,
+      "id": "tt2245084",
       "original_language": "en",
       "original_title": "Big Hero 6",
       "overview": "A special bond develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",

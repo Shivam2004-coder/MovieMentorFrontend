@@ -15,7 +15,7 @@ const MovieCard = ({movieId , title, poster_path }) => {
             <img
                 className="w-full rounded-md"
                 alt={title + ' Poster'}
-                src={IMG_CDN_URL + poster_path}
+                src={poster_path}
             />
             {/* More Info Button with Inner Shadow */}
             <button

@@ -7,10 +7,13 @@ const SecondaryContainer = () => {
 
     const movie = useSelector((store) => store?.movies);
 
-    if (!movie?.nowPlayingMovies) {
+    console.log("SecondaryContainer movie:", movie);
+    
+    if (!movie) {
         return <ShimmerSecondaryContainer />; // Show shimmer when movies are loading
     }
-
+    
+    // console.log("SecondaryContainer After movie:", movie);
     return (
         <div className="bg-black p-1">
             <div className="  md:-mt-28 relative z-20" >

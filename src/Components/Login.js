@@ -79,7 +79,7 @@ const Login = () => {
             </div>
 
 
-            <Footer/>
+            {/* <Footer/> */}
 
         </div>
     )

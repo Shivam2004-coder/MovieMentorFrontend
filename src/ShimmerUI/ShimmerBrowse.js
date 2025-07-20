@@ -9,7 +9,7 @@ const ShimmerBrowse = () => {
             <ShimmerHeader />
             <ShimmerMainContainer/>
             <ShimmerSecondaryContainer/>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 };

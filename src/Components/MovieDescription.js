@@ -72,7 +72,7 @@ const MovieDescription = ({ movie, trailerLink }) => {
     };
 
     return (
-        <div className="bg-gray-950 text-white p-6 rounded-lg shadow-inner shadow-gray-600">
+        <div className="bg-gray-950 text-white p-6 rounded-lg shadow-inner shadow-gray-600 z-30">
             {/* Title */}
             <h2 className="text-xl md:text-3xl font-bold mb-2">{movie?.title || translations.TitleNotAvailable}</h2>
 

@@ -7,7 +7,7 @@ const MovieTrailer = ({ trailerLink, posterPath }) => {
     <div className="relative flex justify-center items-center">
       {trailerLink ? (
         <iframe 
-          className="w-full h-screen"
+          className="w-full h-screen object-cover "
           src={trailerLink} 
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

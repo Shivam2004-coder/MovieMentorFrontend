@@ -4,6 +4,7 @@ import Browse from "./Browse";
 import MovieInfo from "./MovieInfo";
 import GptSearch from "./GptSearch";
 import Library from "./Library"; // Import Library
+import Footer from "./Footer";
 
 const Body = () => {
 
@@ -34,8 +35,9 @@ const Body = () => {
     return (
         <div>
             <RouterProvider router={appRouter} />
-            <div className=" absolute z-50" >
+            <div className=" absolute z-50 " >
             </div>
+            <Footer/>
         </div>
     )
 };

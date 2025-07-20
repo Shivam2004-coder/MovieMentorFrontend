@@ -21,7 +21,7 @@ const Browse = () => {
             <Header />
             <MainContainer />
             <SecondaryContainer />
-            <Footer />
+            {/* <Footer /> */}
 
             {/*
                 MainContainer

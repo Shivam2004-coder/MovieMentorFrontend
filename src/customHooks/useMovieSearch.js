@@ -33,11 +33,17 @@ const useMovieSearch = (props) => {
             const result = await model.generateContent(GeminiQuery);
             const movieNames = result?.response?.candidates[0]?.content?.parts[0]?.text?.split(",")?.map(movie => movie.trim());
 
+            // const promises = movieNames.map(movie => {
+            //     const url = "https://api.themoviedb.org/3/search/movie?query=" + movie + "&include_adult=false&language=en-US&page=1";
+            //     return fetch(url, API_OPTIONS)
+            //         .then(res => res.json())
+            //         .then(res => res.results); // Return results from the fetch
+            // });
+
             const promises = movieNames.map(movie => {
-                const url = "https://api.themoviedb.org/3/search/movie?query=" + movie + "&include_adult=false&language=en-US&page=1";
-                return fetch(url, API_OPTIONS)
-                    .then(res => res.json())
-                    .then(res => res.results); // Return results from the fetch
+                const url = `${process.env.REACT_APP_BASE_URL}api/movies/search?query=${encodeURIComponent(movie)}`;
+                return fetch(url)
+                    .then(res => res.json()); // directly get enriched movie list
             });
         
             // Wait for all promises to resolve

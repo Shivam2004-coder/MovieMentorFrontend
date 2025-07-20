@@ -3,7 +3,6 @@ import './App.css';
 import Body from './Components/Body';
 import { appStore } from './utils/appStore';
 import { Toaster } from 'sonner';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
