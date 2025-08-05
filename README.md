@@ -1,136 +1,57 @@
-# 🎬 CineMood – A Movie Recommendation Website
+# 🎬 MovieMentor – AI-Powered Movie Recommendation Website
 
 ## 🚀 Overview
-CineMood is an AI-powered movie recommendation platform built using React, Firebase, and TMDB API. It allows users to search for movies, get AI-based suggestions, watch trailers, and maintain a personal movie library.
+MovieMentor is an AI-driven movie recommendation platform built with React, Redux Toolkit, and Firebase. Leveraging the OMDB, TRAKT, and YouTube APIs, it allows users to discover movies, receive personalized AI-based suggestions, watch trailers, and curate a personal movie library — all within a sleek and responsive UI.
 
 ## 🛠 Tech Stack
-- **Frontend**: React, TailwindCSS
-- **State Management**: Redux Toolkit
-- **Authentication**: Firebase (Sign In, Sign Up, Profile Update)
-- **APIs Used**: TMDB API (Movie Data), Google Gemini API (GPT-based movie recommendations)
-- **Deployment**: Vercel
+- **Frontend:** React, TailwindCSS  
+- **State Management:** Redux Toolkit  
+- **Authentication:** Firebase (Sign Up, Sign In, Profile Management)  
+- **APIs:** OMDB API (Movie Data), TRAKT API (User Watchlists & Trending), YouTube API (Trailers), Google Gemini API (AI Recommendations)  
+- **Deployment:** Vercel  
 
 ## 🔥 Features
-### **User Authentication**  
-- Secure **Sign Up & Login** with Firebase Authentication  
-- Profile Update & Logout functionality  
 
-### **Movie Browsing & Recommendations**  
-- Displays trending movies using **TMDB API**  
-- **GPT-powered search** for AI-based recommendations  
-- **Multi-language support** for searching  
+### User Authentication  
+- Secure user registration and login with Firebase Authentication  
+- Profile editing and logout capabilities  
 
-### **Movie Trailer & Details**  
-- Embedded **YouTube trailers** for movies  
-- Movie title & description display  
+### Movie Discovery & Recommendations  
+- Browse trending and popular movies using OMDB and TRAKT APIs  
+- AI-powered movie suggestions via Google Gemini API  
+- Multi-language support in search and recommendations  
 
-### **State Management & Performance Optimizations**  
-- Used **Redux Toolkit** to manage user & movie data  
-- **Memoization** to optimize performance  
+### Movie Details & Trailers  
+- View detailed movie info including title, description, and ratings  
+- Embedded YouTube trailers with autoplay and mute options  
 
-### **Additional Features**  
-- **Responsive UI** using TailwindCSS  
-- **Dark-themed UI** for an immersive experience  
-- **Personal Movie Library** feature  
+### State Management & Performance  
+- Robust global state with Redux Toolkit for user data, movies, and library  
+- Memoization and performance optimizations for smooth UX  
 
-## 📸 Screenshots  
-🚀 *Add images of your project UI here*  
+### UI/UX Enhancements  
+- Fully responsive design with TailwindCSS  
+- Dark mode for immersive viewing experience  
+- Personal movie library to save and track favorites  
 
-## 📦 Installation & Setup  
-```sh
+## 📦 Installation & Setup
+
+```bash
 # Clone the repository
-git clone https://github.com/Shivam2004-coder/CineMood---A-Movie-Recommendation-Website.git
+git clone https://github.com/Shivam2004-coder/MovieMentorFrontend.git
 
-# Navigate to the project folder
-cd CineMood
+# Navigate into the project directory
+cd MovieMentor
 
 # Install dependencies
 npm install
 
-# Add your TMDB API Key & Firebase Config in .env file
-
 # Start the development server
 npm start
 
+### 👤 Author
+Made with 💻 by Shivam Vaishnav
+Feel free to reach out for collaboration or feedback.
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- # Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-# CineMood :
-    - Create React App
-    - Configured TailwindCSS
-    - Header
-    - Routing of App
-    - Login Form 
-    - Sign up Form 
-    - Form Validation
-    - useRef Hook
-    - FireBase setup
-    - Deploying our app to Production
-    - Create signup user account
-    - Implement Sign In User API
-    - Created Redux Store with userSlice
-    - Implemented SignOut
-    - Update Profile
-    - BugFix : Sign up user displayName and profile picture update
-    - BugFix : if the user is not logged in Redirect '/browse' to Login Page and vice-versa
-    - Unsubscribe to the onAuthStateChanged callBack
-    - Add the HardCoded values to the constants file
-    - Register TMDB API and create an app and get access token
-    - Get Data from TMDB now-playing movies list API.
-    - Custom Hook for now Playing Movies
-    - Create MovieSlice
-    - Update store with movieSlice
-    - Planning for MainContainer and Secondary Container
-    - Fetch Data for Trailer Video
-    - Update store with Trailer Video Data
-    - Embedded the youtube video and make it autoplay and mute
-    - Tailwind classes to make the main Container look awesome
-    - Build Secondary Component
-    - Build Movie List
-    - Build Movie Card
-    - TMDB Image CDN URL
-    - Made the Browse page amazing with Tailwind CSS
-    - usePopularMovies Custom Hook
-    - GPT search Page
-    - GPT search Bar
-    - Integrate the Gemini api's
-    - Multi - language Feature in our App
-    - Fetched MovieSuggestions from TMDB
-    - created gptSlice added data
-    - Resused movie list component to make movie suggestion container
-    - Memoization
-    - Made a library feature by creating another slice .
-    - Added .env file
-    - Made our site Responsive
-
-# Features of my project :
-
-    - Login-SignUp page
-        - Sign In / Sign Up form
-        - Redirect to Browse Page
-
-    - Browse ( After Authentication )
-        - Header
-        - Main Movie
-            - Trailer in the BackGround
-            - Title & Description
-            - MovieSuggestions
-                - MoviesList * N
-
-    - Netflix GPT
-        - Search Bar
-        - Movie Suggestions
-         -->
+### 📄 License
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
