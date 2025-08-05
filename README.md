@@ -36,7 +36,6 @@ MovieMentor is an AI-driven movie recommendation platform built with React, Redu
 
 ## 📦 Installation & Setup
 
-```bash
 # Clone the repository
 git clone https://github.com/Shivam2004-coder/MovieMentorFrontend.git
 
